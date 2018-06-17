@@ -1,25 +1,30 @@
-<view class="page" >
-    <view class="page__hd" >
-        <view class="page__title">传说法师道具查询工具</view>
-        <view class="page__desc">输入道具全名称，点击查询按钮，则可知其具体功能。</view>
-    </view>
-    <view class="page__bd page__bd_spacing">
-    
-      <view class="weui-cells__title">查询</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入道具名" value="{{searchTest}}" bindinput ="searchTestInput"/>
-          </view>
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">传说法师道具查询工具</view>
+    <view class="page__desc">输入道具全名称，点击查询按钮，则可知其具体功能。</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+
+    <view class="weui-cells__title">查询</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入道具名" value="{{searchTest}}" bindinput="searchTestInput" />
         </view>
       </view>
-      <button class="weui-btn" type="primary" bindtap="searchMagic">查询</button>
-      <view class="weui-article__h1" style='margin-top:10px'>{{t_name}}：</view>
-      
-      <view class="weui-article__p">
-          {{t_content}}
-      </view>
-
-      
     </view>
+    <button class="weui-btn" type="primary" bindtap="searchMagic">查询</button>
+
+
+    <view wx:for="{{result_array}}">
+      
+    
+    <view class="weui-article__h1" style='margin-top:10px;font-weight:bold;'>{{item.t_name}}</view>
+
+    <view class="weui-article__p">
+      {{item.t_content}}
+    </view>
+    </view>
+
+  </view>
 </view>
