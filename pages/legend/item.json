@@ -1,4 +1,4 @@
-
+{
     "skillInfos": [
         {
             "empowered": "动作更快并可影响更大的区域！", 
@@ -793,3 +793,4 @@
             "skillID": "UseLightningFist"
         }
     ]
+}
