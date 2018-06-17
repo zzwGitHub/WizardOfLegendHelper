@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/legend/legend",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Wizard of Legend",
+    "navigationBarTextStyle":"black"
+  }
+}

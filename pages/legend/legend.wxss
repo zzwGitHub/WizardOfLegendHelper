@@ -1,0 +1,21 @@
+/* pages/legend/legend.wxss */
+/**index.wxss**/
+.search-box {
+  border: 1px solid #bbb
+}
+.search-btn {
+  margin: 20px;
+}
+.tesult-text {
+  
+  margin: 20px;
+}
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+.mini-btn{
+    margin-right: 5px;
+}
+
