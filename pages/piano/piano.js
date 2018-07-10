@@ -10,9 +10,9 @@ Page({
 
   doTest: function () {
     this.stopAll();
-    var rn = Math.floor(Math.random() * 7 + 1);
-    console.log(rn);
-    this.testDegree = rn;
+    var rn = Math.floor(Math.random() * 8 + 1);
+    //console.log(rn);
+    //this.testDegree = rn;
     this.setData({
       testRes: rn
     })
@@ -37,6 +37,9 @@ Page({
         break;
       case 7:
         this.B4.play()
+        break;
+      case 8:
+        this.C5.play()
         break;
     }
     
@@ -71,7 +74,7 @@ Page({
     this.B4.play()
   },
   playC5: function () {
-    //this.C4.play()
+    this.C5.play()
   },
 
   stopAll : function(){
@@ -82,6 +85,7 @@ Page({
     this.G4.stop();
     this.A4.stop();
     this.B4.stop();
+    this.C5.stop();
   },
 
 
@@ -123,6 +127,9 @@ Page({
 
     this.B4 = wx.createInnerAudioContext() 
     this.B4.src = 'http://ziwen.imwork.net:16346/music-source/7B.mp3'
+
+    this.C5 = wx.createInnerAudioContext()
+    this.C5.src = 'http://ziwen.imwork.net:16346/music-source/8C.mp3'
     
    
   },
