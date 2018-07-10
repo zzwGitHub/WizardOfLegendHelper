@@ -5,7 +5,7 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title">练耳</view>
-    <view class="page__desc">点击按钮会弹奏do~si中任意一个，并且显示在上方。下面7个按钮也是可以点击的。</view>
+    <view class="page__desc">点击音高按钮会弹奏该音符。点击下一题开始播放do~do'中的任意一个，依靠听觉判断此音是哪个并且按音符，随即会出现结果（是否判断正确）。点击again再次播放此音。</view>
   </view>
   
   <view class="page__bd page__bd_spacing">
@@ -14,7 +14,8 @@
         {{testRes}}
     </view>
     
-    <button class="weui-btn" type="primary" plain="true" bindtap="doTest">begin</button>
+    <button class="weui-btn" type="primary" plain="true" bindtap="doTest">下一题</button>
+    <button class="weui-btn" type="primary" plain="true" bindtap="doAgain">again</button>
     
 
     <button class="weui-btn mini-btn" bindtap="playC4" type="default" size="mini">do</button>
