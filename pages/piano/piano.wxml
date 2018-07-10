@@ -1,0 +1,30 @@
+
+ 
+
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">练耳</view>
+    <view class="page__desc">点击按钮会弹奏do~si中任意一个，并且显示在上方。下面7个按钮也是可以点击的。</view>
+  </view>
+  
+  <view class="page__bd page__bd_spacing">
+
+    <view class="weui-article__p" >
+        {{testRes}}
+    </view>
+    
+    <button class="weui-btn" type="primary" plain="true" bindtap="doTest">begin</button>
+    
+
+    <button class="weui-btn mini-btn" bindtap="playC4" type="default" size="mini">do</button>
+    <button class="weui-btn mini-btn" bindtap="playD4" type="default" size="mini">re</button>
+    <button class="weui-btn mini-btn" bindtap="playE4" type="default" size="mini">mi</button>
+    <button class="weui-btn mini-btn" bindtap="playF4" type="default" size="mini">fa</button>
+    <button class="weui-btn mini-btn" bindtap="playG4" type="default" size="mini">so</button>
+    <button class="weui-btn mini-btn" bindtap="playA4" type="default" size="mini">la</button>
+    <button class="weui-btn mini-btn" bindtap="playB4" type="default" size="mini">si</button>
+    <button class="weui-btn mini-btn" bindtap="playC5" type="default" size="mini">do'</button>
+    
+  </view>
+</view>

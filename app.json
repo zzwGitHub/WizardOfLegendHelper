@@ -1,13 +1,14 @@
 {
-  "pages":[
-    "pages/legend/legend",
+  "pages": [
     "pages/index/index",
+    "pages/piano/piano",
+    "pages/legend/legend",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Wizard of Legend",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
