@@ -5,19 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    testRes: '点击下一题开始。'
+    testRes: '点击下一题开始。',
+    typeRadioItems : [
+      { name: '8个音', value: '0', checked: true },
+      { name: '6个音(不含fa和si)', value: '1'}
+    ]
   },
 
-//下一题
-  doTest: function () {
-    
-    var rn = Math.floor(Math.random() * 8 + 1);
-     //不听 fa 和 si
-    while (rn == 4 || rn == 7){
-      rn = Math.floor(Math.random() * 8 + 1);
+  typeRadioChange: function (e) {
+    //console.log('radio发生change事件，携带value值为：', e.detail.value);
+
+    var typeRadioItems = this.data.typeRadioItems;
+    for (var i = 0, len = typeRadioItems.length; i < len; ++i) {
+      typeRadioItems[i].checked = typeRadioItems[i].value == e.detail.value;
     }
 
-    //console.log(rn);
+    this.setData({
+      typeRadioItems: typeRadioItems
+    });
+  },
+
+  //下一题
+  doTest: function () {
+    
+    var rn = this.makeTestNum();
+    console.log(rn);
     this.testDegree = rn;
     // this.setData({
     //   testRes: rn
@@ -26,6 +38,28 @@ Page({
     
   },
  
+  //根据模式算出考题随机数
+  makeTestNum : function(){
+    var rn = Math.floor(Math.random() * 8 + 1);
+    //不听 fa 和 si
+    while (this.getCurrModel() == 1 && (rn == 4 || rn == 7)) {
+      rn = Math.floor(Math.random() * 8 + 1);
+    }
+    return rn;
+  },
+
+  //获取当前模式
+  getCurrModel : function(){
+    var model = 0;
+    var typeRadioItems = this.data.typeRadioItems;
+    for (var i = 0, len = typeRadioItems.length; i < len; ++i) {
+      if (typeRadioItems[i].checked) {
+        model = typeRadioItems[i].value;
+      }
+    }
+    return model;
+  },
+
   palyByNum : function(num){
     var voice = wx.createInnerAudioContext();
     switch (num) {
@@ -55,6 +89,9 @@ Page({
         break;
     }
     voice.play();
+    voice.onEnded((res) => {
+      voice.destroy();
+    })
   },
 
   playC4: function () {
