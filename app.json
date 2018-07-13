@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/piano/piano",
+    "pages/keyboard/keyboard",
     "pages/legend/legend",
     "pages/logs/logs"
   ],

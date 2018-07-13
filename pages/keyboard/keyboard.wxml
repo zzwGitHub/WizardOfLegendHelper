@@ -1,0 +1,11 @@
+
+<canvas canvas-id="myCanvas" id='myCanvasId'
+  style="margin: 5px; border:1px solid #d3d3d3; width:{{winWidth}}px; height:800px"
+  bindtouchstart="start"
+  bindtouchmove="move"
+  bindtouchend="end"
+  />
+
+<view hidden="{{hidden}}">
+  Coordinates: ({{x}}, {{y}}, {{winWidth}})
+</view>

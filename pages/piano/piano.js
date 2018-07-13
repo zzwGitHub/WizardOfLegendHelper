@@ -61,6 +61,9 @@ Page({
   },
 
   palyByNum : function(num){
+
+    console.log(num);
+
     var voice = wx.createInnerAudioContext();
     switch (num) {
       case 1:
@@ -94,43 +97,21 @@ Page({
     })
   },
 
-  playC4: function () {
-    this.palyByNum(1);
-    this.checkTest(1);
+  dontPlayIfAnswer : function(){
+    
   },
-  playD4: function () {
-    this.palyByNum(2);
-    this.checkTest(2);
+
+  playBtn: function (e) {
+    var num = e.currentTarget.dataset.degree;
+    if (this.testDegree != undefined) {
+      this.checkTest(num * 1);
+    }else{
+      this.palyByNum(num * 1);//太有意思了， 字符串 转 数字
+    }
   },
-  playE4: function () {
-    this.palyByNum(3);
-    this.checkTest(3);
-  },
-  playF4: function () {
-    this.palyByNum(4);
-    this.checkTest(4);
-  },
-  playG4: function () {
-    this.palyByNum(5);
-    this.checkTest(5);
-  },
-  playA4: function () {
-    this.palyByNum(6);
-    this.checkTest(6);
-  },
-  playB4: function () {
-    this.palyByNum(7);
-    this.checkTest(7);
-  },
-  playC5: function () {
-    this.palyByNum(8);
-    this.checkTest(8);
-  },
+
 //检测答题是否正确
   checkTest : function(touchNum){
-    if (this.testDegree == undefined){
-      return;
-    }
     if (this.testDegree == touchNum){
       wx.showToast({
         title: '正确',
@@ -161,11 +142,74 @@ Page({
   },
 
   
+  start: function (e) {
+    this.setData({
+      hidden: false,
+      x: e.touches[0].x,
+      y: e.touches[0].y
+    })
+  },
+  move: function (e) {
+    this.setData({
+      x: e.touches[0].x,
+      y: e.touches[0].y
+    })
+  },
+  end: function (e) {
+    this.setData({
+      hidden: true
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var _this = this;
+    var windowWidth = "";
+    var windowHeight = "";
+
+    wx.getSystemInfo({
+      success: function (res) {
+        windowWidth = res.windowWidth;
+        windowHeight = res.windowHeight;
+        _this.setData({
+          winWidth: windowWidth - 10
+        })
+      }
+    })
+
+    //这比例完全是为了看着顺眼，不是真实的。
+    var whiteKeyWidth = 33;
+    var whiteKeyHeight = 6.26 * whiteKeyWidth;
+    var BlackKeyWidth = whiteKeyWidth / 2;
+    var BlackKeyHeight = whiteKeyHeight * 0.56;
+
+    var keyboardLeft = 10;
+    var keyboardUp = 10;
+
+    _this.setData({
+      winHeight: whiteKeyHeight + keyboardUp*2
+    })
+
+    const ctx = wx.createCanvasContext('myCanvas')
+    //
+    ctx.setStrokeStyle('black')
+
+    for (var i = 0; i < 10; i++) {
+      ctx.strokeRect(keyboardLeft + i * whiteKeyWidth, keyboardUp, whiteKeyWidth, whiteKeyHeight)
+    }
+
+    ctx.setFillStyle('black')
+    for (var i = 0; i < 10; i++) {
+
+      if (i == 0 || i == 3 || i == 7 || i == 10) {
+        continue;
+      }
+      ctx.fillRect(keyboardLeft + i * whiteKeyWidth - (BlackKeyWidth / 2)
+        , keyboardUp, BlackKeyWidth, BlackKeyHeight)
+    }
+    ctx.draw()
   },
  
   /**
