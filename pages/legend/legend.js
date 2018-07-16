@@ -193,7 +193,7 @@ Page({
 			 '黛米的茶壶': '提升增益类奥术的持续时间'};
     var result = [];
     if (sea.length > 0) {
-      for (jos_key in jos) {
+      for (var jos_key in jos) {
         if (jos_key.search(sea) >= 0) {
           result.push({
             t_name: jos_key,
