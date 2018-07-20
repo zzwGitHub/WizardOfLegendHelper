@@ -1,2 +1,56 @@
-<!--pages/interval/interval.wxml-->
-<text>pages/interval/interval.wxml</text>
+<view class="page">
+  
+  <view class="page__bd page__bd_spacing">
+
+    <view class="weui-article__p" style='font-size:25px'>
+        {{testMsg}}
+    </view>
+    
+    
+    <view class="weui-flex__item"><view class="function-btn" bindtap="doTest" >下一题</view></view>
+    <view class="weui-flex__item"><view class="function-btn" bindtap="doAgain">again</view></view>
+    
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="1" bindtap="playBtn">小二度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="2" bindtap="playBtn">大二度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="3" bindtap="playBtn">小三度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="4" bindtap="playBtn">大三度</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="5" bindtap="playBtn">纯四度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="6" bindtap="playBtn">三全音</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="7" bindtap="playBtn">纯五度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="8" bindtap="playBtn">小六度</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="9" bindtap="playBtn">大六度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="10" bindtap="playBtn">小七音</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="11" bindtap="playBtn">大七度</view></view>
+        <view class="weui-flex__item"><view class="interval-btn" data-degree="12" bindtap="playBtn">纯八度</view></view>
+    </view>
+
+
+    <view class="weui-article__p" style='font-size:15px'>
+        下方选择播放范围
+    </view>
+
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="{{intervalMap.i1}}" data-degree="1" bindtap="selectBtn">小二度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i2}}" data-degree="2" bindtap="selectBtn">大二度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i3}}" data-degree="3" bindtap="selectBtn">小三度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i4}}" data-degree="4" bindtap="selectBtn">大三度</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="{{intervalMap.i5}}" data-degree="5" bindtap="selectBtn">纯四度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i6}}" data-degree="6" bindtap="selectBtn">三全音</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i7}}" data-degree="7" bindtap="selectBtn">纯五度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i8}}" data-degree="8" bindtap="selectBtn">小六度</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="{{intervalMap.i9}}" data-degree="9" bindtap="selectBtn">大六度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i10}}" data-degree="10" bindtap="selectBtn">小七音</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i11}}" data-degree="11" bindtap="selectBtn">大七度</view></view>
+        <view class="weui-flex__item"><view class="{{intervalMap.i12}}" data-degree="12" bindtap="selectBtn">纯八度</view></view>
+    </view>
+  </view>
+</view>

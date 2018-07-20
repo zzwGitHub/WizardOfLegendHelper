@@ -1,1 +1,42 @@
-/* pages/interval/interval.wxss */
+.function-btn{
+    margin: 10px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #de7d2c;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #ffffff;
+    font-size: 25px;
+    border-radius:10px;
+}
+
+.interval-btn{
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #14446a;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #ffffff;
+    border-radius:7px;
+}
+
+.select{
+  margin: 5px;
+  padding: 0 10px;
+  text-align: center;
+  height: 2.3em;
+  line-height: 2.3em;
+  background-color: #ffffff;
+  color: #de7d2c;
+  border-radius:7px;
+}
+
+.select-on{
+  background-color: #de7d2c;
+  color: #ffffff;
+}
+.select-off{
+  background-color: #ffffff;
+  color: #de7d2c;
+}

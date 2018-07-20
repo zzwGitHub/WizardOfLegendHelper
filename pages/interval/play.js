@@ -1,18 +1,26 @@
 var Play = {
-  palyByNum: function (num) {
+  playByNum: function (num) {
 
-    console.log(num);
+    //console.log('Play' + num);
 
     var voice = wx.createInnerAudioContext();
 
-    voice.src = 'pages/piano/source/' + (num+43) + '.mp3';
+    voice.src = 'source/' + num + '.mp3';
     voice.play();
     voice.onEnded((res) => {
       voice.destroy();
     })
+  },
+  playInterval : function(low, high){
+    //console.log('low ' + low);
+    Play.playByNum(low);
+    setTimeout(function () {
+      Play.playByNum(high);
+    }, 1000)
   }
 }
 
 module.exports = {
-  ppp: Play.palyByNum
+  play: Play.playByNum,
+  playInterval: Play.playInterval
 }
