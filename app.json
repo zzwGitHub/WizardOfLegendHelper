@@ -1,10 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/interval/interval",
     "pages/piano/piano",
     "pages/keyboard/keyboard",
     "pages/legend/legend",
     "pages/logs/logs"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

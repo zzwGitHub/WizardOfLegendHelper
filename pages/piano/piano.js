@@ -29,7 +29,7 @@ Page({
   doTest: function () {
     
     var rn = this.makeTestNum();
-    console.log(rn);
+    //console.log('test'+rn);
     this.testDegree = rn;
     // this.setData({
     //   testRes: rn
@@ -62,33 +62,34 @@ Page({
 
   palyByNum : function(num){
 
-    console.log(num);
+    //console.log('play' + num);
 
     var voice = wx.createInnerAudioContext();
+    var musicPath = 'source/';
     switch (num) {
       case 1:
-        voice.src = 'pages/piano/source/40-C.mp3';
+        voice.src = musicPath + '40.mp3';
         break;
       case 2:
-        voice.src = 'pages/piano/source/42-D.mp3';
+        voice.src = musicPath + '42.mp3';
         break;
       case 3:
-        voice.src = 'pages/piano/source/44-E.mp3';
+        voice.src = musicPath + '44.mp3';
         break;
       case 4:
-        voice.src = 'pages/piano/source/45-F.mp3';
+        voice.src = musicPath + '45.mp3';
         break;
       case 5:
-        voice.src = 'pages/piano/source/47-G.mp3';
+        voice.src = musicPath + '47.mp3';
         break;
       case 6:
-        voice.src = 'pages/piano/source/49-A.mp3';
+        voice.src = musicPath + '49.mp3';
         break;
       case 7:
-        voice.src = 'pages/piano/source/51-B.mp3';
+        voice.src = musicPath + '51.mp3';
         break;
       case 8:
-        voice.src = 'pages/piano/source/52-C.mp3';
+        voice.src = musicPath + '52.mp3';
         break;
     }
     voice.play();
