@@ -68,7 +68,7 @@ Page({
       })
       return;
     }
-    Play.playInterval(testLowNum, testLowNum + testInterval);
+    Play.playInterval(testLowNum, testLowNum + testInterval*1);
   },
   /**
    * 获取一个随机的低音（在范围内）
