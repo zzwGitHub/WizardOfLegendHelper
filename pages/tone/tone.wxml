@@ -1,0 +1,41 @@
+<view class="page">
+  
+  <view class="page__bd page__bd_spacing">
+
+    <!--<view class="weui-article__p" style='font-size:25px'>
+        点击 下一题 开始
+    </view> -->
+    播放小字1组的7个自然音，用于确定标准音：
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="40" bindtap="playBtn">C(do)</view></view>
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="42" bindtap="playBtn">D(re)</view></view>
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="44" bindtap="playBtn">E(mi)</view></view>
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="45" bindtap="playBtn">F(fa)</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="47" bindtap="playBtn">G(so)</view></view>
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="49" bindtap="playBtn">A(la)</view></view>
+        <view class="weui-flex__item"><view class="tone-btn" data-degree="51" bindtap="playBtn">B(xi)</view></view>
+        <view class="weui-flex__item"></view>
+    </view>
+    
+    下方选择测试范围：
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="{{toneStyleMap.s}}" data-degree="s" bindtap="selectRange">小字组</view></view>
+        <view class="weui-flex__item"><view class="{{toneStyleMap.s1}}" data-degree="s1" bindtap="selectRange">小字1组</view></view>
+        <view class="weui-flex__item"><view class="{{toneStyleMap.s2}}" data-degree="s2" bindtap="selectRange">小字2组</view></view> 
+    </view>
+    下方测试练习：
+    <view class="weui-flex__item"><view class="function-btn" bindtap="doTest" >下一题</view></view>
+    <view class="weui-flex__item"><view class="function-btn" bindtap="doAgain">again</view></view>
+    
+    
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="answer-view" bindtouchstart="answerTouch" bindtouchend="answerLeave">{{answerMsg}}</view></view>
+         
+    </view>
+
+
+    
+  </view>
+</view>

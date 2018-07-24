@@ -17,16 +17,24 @@
         <view class="weui-cell__hd">
             <image src="/pages/index/pic/m2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
-        <view class="weui-cell__bd">钢琴视唱练耳</view>
+        <view class="weui-cell__bd">标准单音练习</view>
         <view class="weui-cell__ft weui-cell__ft_in-access">功能2</view>
+    </navigator>
+    <navigator url="../tone/tone" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+            <image src="/pages/index/pic/m2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">全域单音练习</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">功能3</view>
     </navigator>
     <navigator url="../interval/interval" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__hd">
             <image src="/pages/index/pic/m2.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
-        <view class="weui-cell__bd">钢琴音程练习</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">功能3</view>
+        <view class="weui-cell__bd">音程练习</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">功能4</view>
     </navigator>
+    
   </view>
   
 </view>

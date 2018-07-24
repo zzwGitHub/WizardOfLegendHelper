@@ -1,6 +1,6 @@
 // pages/interval/interval.js
 
-var Play = require('./play.js');
+var Play = require('../../utils/play.js');
 var degreeMix = 16;
 var degreeMax = 75;
 var testInterval = 0;//测试音程

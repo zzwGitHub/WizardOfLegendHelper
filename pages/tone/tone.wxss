@@ -2,7 +2,7 @@
     margin: 10px;
     padding: 0 10px;
     text-align: center;
-    background-color: #de7d2c;
+    background-color: #1abc9c;
     height: 2.3em;
     line-height: 2.3em;
     color: #ffffff;
@@ -10,34 +10,45 @@
     border-radius:10px;
 }
 
-.interval-btn{
+.tone-btn{
     margin: 5px;
     padding: 0 10px;
     text-align: center;
-    background-color: #14446a;
+    background-color: #3498db;
     height: 2.3em;
     line-height: 2.3em;
     color: #ffffff;
     border-radius:7px;
 }
 
-.select{
+.select-btn{
   margin: 5px;
   padding: 0 10px;
   text-align: center;
   height: 2.0em;
   line-height: 2.0em;
   background-color: #ffffff;
-  color: #de7d2c;
+  color: #1abc9c;
   border-radius:7px;
-  border:2px solid #de7d2c;
+  border:2px solid #1abc9c;
 }
 
 .select-on{
-  background-color: #de7d2c;
+  background-color: #1abc9c;
   color: #ffffff;
 }
 .select-off{
   background-color: #ffffff;
-  color: #de7d2c;
+  color: #1abc9c;
 }
+
+.answer-view{
+  background-color: #BDC3C7;
+  color: #2C3E50;
+  text-align: center;
+  font-size: 25px;
+  line-height: 8.3em;
+}
+
+
+
