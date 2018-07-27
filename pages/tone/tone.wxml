@@ -5,7 +5,7 @@
     <!--<view class="weui-article__p" style='font-size:25px'>
         点击 下一题 开始
     </view> -->
-    播放小字1组的7个自然音，用于确定标准音：
+    播放选中音域的音阶(如选择多个或者不选，则播放小字一组)：
     <view class="weui-flex">
         <view class="weui-flex__item"><view class="tone-btn" data-degree="40" bindtap="playBtn">C(do)</view></view>
         <view class="weui-flex__item"><view class="tone-btn" data-degree="42" bindtap="playBtn">D(re)</view></view>

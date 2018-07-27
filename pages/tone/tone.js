@@ -18,13 +18,11 @@ Page({
   },
   /**
    * 测试
-   * 范围：degreeMix ~ degreeMax
-   * 在范围内随机出两个音（小于12度）
    */
   doTest: function () {
     if (toneRangeArr.length == 0) {
       wx.showToast({
-        title: '请至少选择一个音程',
+        title: '请至少选择一个音组',
         icon: 'none',
         duration: 2000
       })
@@ -112,8 +110,35 @@ Page({
     //console.log(toneRangeArr.length);
   },
   playBtn : function(e){
+    var selectGroup = new Array(); 
     var num = e.currentTarget.dataset.degree;
-    Play.play(num * 1);
+    var playTone = num * 1;
+
+    var styleMap = this.data.toneStyleMap;
+    for (var key in styleMap) {
+      if (styleMap[key].indexOf("on") != -1) {//on的都找出来！
+        selectGroup = selectGroup.concat('s');
+      }
+    }
+    if (selectGroup.length != 1){
+      Play.play(playTone);
+      return;
+    }
+
+    for (var key in styleMap) {
+      if (styleMap[key].indexOf("on") != -1) {//on的都找出来！
+        if (key == 's') {
+          playTone = num * 1 - 12;
+        }
+        if (key == 's1') {
+          playTone = num * 1;
+        }
+        if (key == 's2') {
+          playTone = num * 1 + 12;
+        }
+      }
+    }
+    Play.play(playTone);
   },
   answerTouch : function(){
     if (testTone == 0) {
