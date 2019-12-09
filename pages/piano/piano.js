@@ -8,7 +8,9 @@ Page({
     testRes: '点击下一题开始。',
     typeRadioItems : [
       { name: '8个音', value: '0', checked: true },
-      { name: '6个音(不含fa和si)', value: '1'}
+      { name: '6个音(不含fa和si)', value: '1'},
+      { name: '只有黑键', value: '2' },
+      { name: '全音(12键)', value: '3' }
     ]
   },
 
@@ -29,7 +31,7 @@ Page({
   doTest: function () {
     
     var rn = this.makeTestNum();
-    //console.log('test'+rn);
+    // console.log('test'+rn);
     this.testDegree = rn;
     // this.setData({
     //   testRes: rn
@@ -40,11 +42,22 @@ Page({
  
   //根据模式算出考题随机数
   makeTestNum : function(){
-    var rn = Math.floor(Math.random() * 8 + 1);
-    //不听 fa 和 si
-    while (this.getCurrModel() == 1 && (rn == 4 || rn == 7)) {
-      rn = Math.floor(Math.random() * 8 + 1);
+    var rn = Math.floor(Math.random() * 13 + 1);
+
+    //8个音
+    while (this.getCurrModel() == 0 && (rn >= 9)) {
+      rn = Math.floor(Math.random() * 13 + 1);
     }
+    //6个音
+    while (this.getCurrModel() == 1 && (rn == 4 || rn == 7 || rn >= 9)) {
+      rn = Math.floor(Math.random() * 13 + 1);
+    }
+
+    //全黑键
+    while (this.getCurrModel() == 2 && (rn <= 8)) {
+      rn = Math.floor(Math.random() * 13 + 1);
+    }
+
     return rn;
   },
 
@@ -62,7 +75,7 @@ Page({
 
   palyByNum : function(num){
 
-    //console.log('play' + num);
+    // console.log('play' + num);
 
     var voice = wx.createInnerAudioContext();
     var musicPath = 'source/';
@@ -90,6 +103,22 @@ Page({
         break;
       case 8:
         voice.src = musicPath + '52.mp3';
+        break;
+
+      case 9:
+        voice.src = musicPath + '41.mp3';
+        break;
+      case 10:
+        voice.src = musicPath + '43.mp3';
+        break;
+      case 11:
+        voice.src = musicPath + '46.mp3';
+        break;
+      case 12:
+        voice.src = musicPath + '48.mp3';
+        break;
+      case 13:
+        voice.src = musicPath + '50.mp3';
         break;
     }
     voice.play();
@@ -120,8 +149,26 @@ Page({
         duration: 1000
       })
     }else{
+      let answerMsg = this.testDegree;
+      switch (this.testDegree){
+        case 9:
+          answerMsg = '#do';
+          break;
+        case 10:
+          answerMsg = '#re';
+          break;
+        case 11:
+          answerMsg = '#fa';
+          break;
+        case 12:
+          answerMsg = '#so';
+          break;
+        case 13:
+          answerMsg = '#la';
+          break;
+      }
       wx.showToast({
-        title: '正确答案是 ' + this.testDegree,
+        title: '正确答案是 ' + answerMsg,
         icon: 'none',
         duration: 2000
       })

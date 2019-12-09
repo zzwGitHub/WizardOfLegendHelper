@@ -13,5 +13,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Wizard of Legend",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

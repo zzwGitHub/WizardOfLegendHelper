@@ -39,6 +39,12 @@
     <button class="weui-btn mini-btn" bindtap="playBtn" data-degree="6" type="default" size="mini">la</button>
     <button class="weui-btn mini-btn" bindtap="playBtn" data-degree="7" type="default" size="mini">si</button>
     <button class="weui-btn mini-btn" bindtap="playBtn" data-degree="8" type="default" size="mini">do'</button>
+
+    <button class="weui-btn mini-btn black-key" bindtap="playBtn" data-degree="9" type="default" size="mini">#do</button>
+    <button class="weui-btn mini-btn black-key" bindtap="playBtn" data-degree="10" type="default" size="mini">#re</button>
+    <button class="weui-btn mini-btn black-key" bindtap="playBtn" data-degree="11" type="default" size="mini">#fa</button>
+    <button class="weui-btn mini-btn black-key" bindtap="playBtn" data-degree="12" type="default" size="mini">#so</button>
+    <button class="weui-btn mini-btn black-key" bindtap="playBtn" data-degree="13" type="default" size="mini">#la</button>
     
   </view>
 </view>
